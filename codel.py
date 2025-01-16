@@ -6,3 +6,5 @@ ee.Initialize(project='ee-wufan0137')
 
 
 print(ee.Number(1))
+
+print("second push")
