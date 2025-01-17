@@ -9,4 +9,4 @@ def initialize_gee():
         ee.Authenticate()
         ee.Initialize()
         print("🔑 GEE 已认证并初始化成功！")
-
+print('eeeee')
