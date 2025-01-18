@@ -11,10 +11,7 @@ setup(
     url='https://github.com/gg-zl/GEE_py',
     packages=find_packages(),  # 自动查找 geepy 包
     install_requires=[
-        'earthengine-api',
-        'geemap',
         'numpy',
-        'matplotlib'
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
