@@ -1,6 +1,6 @@
 # .readthedocs.yaml
 # Read the Docs configuration file
-version: 1
+version: 2
 
 build:
   os: ubuntu-22.04
