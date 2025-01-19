@@ -25,6 +25,12 @@ extensions = [
     'sphinx.ext.viewcode',     # 提供源码链接
 ]
 
+autodoc_default_options = {
+    'members': True,
+    'undoc-members': True,
+    'show-inheritance': True,
+}
+
 html_theme_options = {
     'collapse_navigation': False,  # 禁止菜单折叠，默认展开
     'navigation_depth': 4,         # 设置导航的深度，4 表示最多显示 4 层
