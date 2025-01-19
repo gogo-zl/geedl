@@ -42,7 +42,7 @@ pip install --upgrade git+https://gitclone.com/github.com/gogo-zl/GEE_py.git
   - 当前版本仅实现部分基础功能，包括：
     - 计算任意年份、区域的Landsat和MOD09A1
     - 基础分块函数，如矩形、六边形
-    - 其他简单有趣的小功能
+    - 其他简单有趣的小功能.
   - 更多高级功能（批量处理样本、高效大规模计算支持）将持续更新。
   
 - **欢迎贡献**：
