@@ -9,7 +9,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))  # 项目根目录
-
+print(f"Current sys.path: {sys.path}")
 
 project = 'geepy'
 copyright = '2025, Zhang Lei'
@@ -29,6 +29,9 @@ autodoc_default_options = {
     'members': True,
     'undoc-members': True,
     'show-inheritance': True,
+    'private-members': True,
+    'special-members': '__init__',
+    'inherited-members': True,
 }
 
 html_theme_options = {
@@ -39,6 +42,8 @@ html_theme_options = {
 html_context = {
     'current_version': release,
 }
+
+autodoc_mock_imports = ['geemap', 'earthengine-api', 'numpy', 'pandas']
 
 templates_path = ['_templates']
 exclude_patterns = []

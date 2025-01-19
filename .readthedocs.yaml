@@ -5,9 +5,8 @@ build:
   tools:
     python: "3.9"
 
-sphinx:
-  configuration: docs/source/conf.py
-
 python:
   install:
     - requirements: docs/requirements.txt
+    - method: pip
+      path: .
