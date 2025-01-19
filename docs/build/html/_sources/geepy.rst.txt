@@ -4,7 +4,7 @@ geepy package
 Submodules
 ----------
 
-geepy.gee\_image\_loader module
+geepy.gee_image_loader module
 -------------------------------
 
 .. automodule:: geepy.gee_image_loader
@@ -12,7 +12,7 @@ geepy.gee\_image\_loader module
    :undoc-members:
    :show-inheritance:
 
-geepy.gee\_params module
+geepy.gee_params module
 ------------------------
 
 .. automodule:: geepy.gee_params
@@ -20,7 +20,7 @@ geepy.gee\_params module
    :undoc-members:
    :show-inheritance:
 
-geepy.gee\_processing module
+geepy.gee_processing module
 ----------------------------
 
 .. automodule:: geepy.gee_processing
@@ -28,7 +28,7 @@ geepy.gee\_processing module
    :undoc-members:
    :show-inheritance:
 
-geepy.gee\_utils module
+geepy.gee_utils module
 -----------------------
 
 .. automodule:: geepy.gee_utils
@@ -36,7 +36,7 @@ geepy.gee\_utils module
    :undoc-members:
    :show-inheritance:
 
-geepy.gee\_visualization module
+geepy.gee_visualization module
 -------------------------------
 
 .. automodule:: geepy.gee_visualization
