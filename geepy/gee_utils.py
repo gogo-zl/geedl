@@ -114,7 +114,7 @@ def generate_rect_grid(study_area, grid_width=1.5, grid_height=1.5):
 
 def generate_hex_grid(study_area, radius=1.5):
     """
-    在给定的研究区内生成指定大小的六边形网格。
+    在给定的研究区内生成指定大小的六边形网格
 
     Args:
         study_area (ee.FeatureCollection): 研究区。
