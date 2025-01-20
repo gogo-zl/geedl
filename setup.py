@@ -9,13 +9,13 @@ setup(
     author='Zhang Lei',
     author_email='zhanglei1136@163.com',
     url='https://github.com/gg-zl/GEE_py',
-    packages=find_packages(),  # 自动查找 geepy 包
+    packages=find_packages(), 
     install_requires=[
-        'numpy',                # 数值计算
-        'earthengine-api',      # Google Earth Engine API
-        'geemap',               # 地图可视化
-        'pandas',               # 数据处理（如需要）
-        'matplotlib',           # 数据可视化（如需要）
+        'numpy>=1.23.5',              
+        'earthengine-api>=1.4.5',     
+        'geemap>=0.35.1',             
+        'pandas>=2.0.3',              
+        'matplotlib>=3.7.2 ',           
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
