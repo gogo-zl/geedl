@@ -3,57 +3,39 @@ import importlib
 import geepy
 from datetime import datetime
 from IPython import get_ipython
+import urllib.request
+import json
 
 
+#######################################################################
+######################################## 日志和执行控制相关
+#######################################################################
 
-
-def log_start_time(info=None):
+def log_execution_start(info=None):
     """
     记录代码单元执行的开始时间。
     """
     start_time = datetime.now()
     print(f"\n🔔 开始时间: {start_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
 
-def register_pre_run_cell_hook():
+
+def register_jupyter_hook():
     """
     注册 Jupyter Notebook 钩子，用于在代码单元运行前自动记录时间。
     """
     ipython = get_ipython()
     if ipython:
-        ipython.events.register('pre_run_cell', log_start_time)
+        ipython.events.register('pre_run_cell', log_execution_start)
         print("✅ 已注册 pre_run_cell 钩子！")
     else:
         print("⚠️ 当前环境非 Jupyter Notebook，无法注册钩子！")
 
 
-def print_image_collection_start_dates(imgcol):
-    """
-    打印影像集合中每个影像的开始时间，并转换为 'yyyy-MM-dd' 的日期格式。
 
-    Args:
-        imgcol (ee.ImageCollection): 输入的影像集合。
-
-    Returns:
-        list: 包含所有影像开始时间的字符串列表，格式为 'yyyy-MM-dd'。
-    """
-    def format_start_date(image):
-        # 获取影像的开始时间属性并格式化为 'yyyy-MM-dd'
-        start_date = ee.Date(image.get('system:time_start')).format('yyyy-MM-dd')
-        return ee.Feature(None, {'date': start_date})  # 创建一个包含日期的 Feature
-
-    # 将影像集合映射为日期集合
-    date_features = imgcol.map(format_start_date)
-
-    # 提取日期并打印
-    dates = date_features.aggregate_array('date').getInfo()
-    print("Start dates of images in the collection:")
-    # for date in dates:
-    #     print(date)
-
-    return dates
-
-
-def reload_geepy():
+#######################################################################
+######################################## 动态加载模块
+#######################################################################
+def reload_package():
     """
     强制重新加载 geepy 包及其所有子模块，适用于开发者模式安装时更新后的动态加载。
     """
@@ -63,7 +45,34 @@ def reload_geepy():
     importlib.reload(geepy)
 
 
-def create_rectangular_grid(study_area, grid_width=1.5, grid_height=1.5):
+
+
+#######################################################################
+######################################## 网络资源加载
+#######################################################################
+
+def fetch_json(url):
+    """
+    从指定 URL 加载 JSON 文件。
+    
+    Args:
+        url (str): JSON 文件的 URL。
+    
+    Returns:
+        dict: 解析后的 JSON 数据。
+    """
+    try:
+        with urllib.request.urlopen(url) as response:
+            return json.loads(response.read().decode())
+    except Exception as e:
+        raise RuntimeError(f"无法加载 JSON 文件：{url}\n错误信息：{e}")
+
+
+#######################################################################
+######################################## 网格生成工具
+#######################################################################
+
+def generate_rect_grid(study_area, grid_width=1.5, grid_height=1.5):
     """
     在给定的研究区内生成指定大小的矩形网格。
 
@@ -103,7 +112,7 @@ def create_rectangular_grid(study_area, grid_width=1.5, grid_height=1.5):
     return grid_fc.filterBounds(study_area)
 
 
-def create_hexagonal_grid(study_area, radius=1.5):
+def generate_hex_grid(study_area, radius=1.5):
     """
     在给定的研究区内生成指定大小的六边形网格。
 
@@ -169,5 +178,43 @@ def create_hexagonal_grid(study_area, radius=1.5):
     return hex_grid.filterBounds(study_area)
 
 
+#######################################################################
+######################################## 影像处理小工具
+#######################################################################
+
+def get_image_collection_dates(imgcol):
+    """
+    打印影像集合中每个影像的开始时间，并转换为 'yyyy-MM-dd' 的日期格式。
+
+    Args:
+        imgcol (ee.ImageCollection): 输入的影像集合。
+
+    Returns:
+        list: 包含所有影像开始时间的字符串列表，格式为 'yyyy-MM-dd'。
+    """
+    def format_start_date(image):
+        # 获取影像的开始时间属性并格式化为 'yyyy-MM-dd'
+        start_date = ee.Date(image.get('system:time_start')).format('yyyy-MM-dd')
+        return ee.Feature(None, {'date': start_date})  # 创建一个包含日期的 Feature
+
+    # 将影像集合映射为日期集合
+    date_features = imgcol.map(format_start_date)
+
+    # 提取日期并打印
+    dates = date_features.aggregate_array('date').getInfo()
+    print("Start dates of images in the collection:")
+    # for date in dates:
+    #     print(date)
+
+    return dates
+
+
 # 明确需要导出的函数
-__all__ = ["register_pre_run_cell_hook", "print_image_collection_start_dates", "reload_geepy", "create_rectangular_grid", "create_hexagonal_grid"]
+__all__ = [
+    "register_jupyter_hook",
+    "get_image_collection_dates",
+    "reload_package",
+    "generate_rect_grid",
+    "generate_hex_grid",
+    "fetch_json"
+]
