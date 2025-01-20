@@ -9,7 +9,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))  # 项目根目录
-print(f"Current sys.path: {sys.path}")
+# print(f"Current sys.path: {sys.path}")
 
 project = 'geepy'
 copyright = '2025, Zhang Lei'
