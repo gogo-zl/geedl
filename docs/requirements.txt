@@ -9,4 +9,4 @@ datetime
 IPython
 json
 urllib
-geepy @ git+https://gitclone.com/github.com/gogo-zl/GEE_py.git
+geepy @ git+https://github.com/gogo-zl/GEE_py.git
