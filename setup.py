@@ -11,11 +11,11 @@ setup(
     url='https://github.com/gg-zl/GEE_py',
     packages=find_packages(), 
     install_requires=[
-        'numpy>=1.23.5',              
-        'earthengine-api>=1.4.5',     
-        'geemap>=0.35.1',             
-        'pandas>=2.0.3',              
-        'matplotlib>=3.7.2 ',           
+        'numpy',              
+        'earthengine-api',     
+        'geemap',             
+        'pandas',              
+        'matplotlib',           
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
