@@ -1,6 +1,9 @@
 import importlib
 import pkgutil
 
+
+__version__ = "0.1.1"
+
 __all__ = []  # 汇总所有模块导出的内容
 
 # 遍历当前包下的所有模块
