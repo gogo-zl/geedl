@@ -10,6 +10,7 @@ DATASET_IDS = {
     'L7': "LANDSAT/LE07/C02/T1_L2",
     'L5': "LANDSAT/LT05/C02/T1_L2",
     'MOD09A1': "MODIS/061/MOD09A1",
+    'MCD43A4': "MODIS/061/MCD43A4"
 }
 
 ORIGINAL_BANDS = {
@@ -17,7 +18,8 @@ ORIGINAL_BANDS = {
     'L8': ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7'], 
     'L7': ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7'],
     'L5': ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7'],
-    'MOD09A1': ['sur_refl_b01', 'sur_refl_b02', 'sur_refl_b03', 'sur_refl_b04', 'sur_refl_b05', 'sur_refl_b06', 'sur_refl_b07']
+    'MOD09A1': ['sur_refl_b01', 'sur_refl_b02', 'sur_refl_b03', 'sur_refl_b04', 'sur_refl_b05', 'sur_refl_b06', 'sur_refl_b07'],
+    'MCD43A4': ['Nadir_Reflectance_Band1', 'Nadir_Reflectance_Band2', 'Nadir_Reflectance_Band3', 'Nadir_Reflectance_Band4', 'Nadir_Reflectance_Band5', 'Nadir_Reflectance_Band6', 'Nadir_Reflectance_Band7']
 }
 
 RENAMED_BANDS = {
@@ -25,7 +27,8 @@ RENAMED_BANDS = {
     'L8': ['ub', 'blue', 'green', 'red', 'nir', 'swir1', 'swir2'], 
     'L7': ['blue', 'green', 'red', 'nir', 'swir1', 'swir2'],
     'L5': ['blue', 'green', 'red', 'nir', 'swir1', 'swir2'],
-    'MOD09A1': ['red', 'nir', 'blue', 'green', 'mir', 'swir1', 'swir2']
+    'MOD09A1': ['red', 'nir', 'blue', 'green', 'mir', 'swir1', 'swir2'],
+    'MCD43A4': ['red', 'nir', 'blue', 'green', 'mir', 'swir1', 'swir2']
 }
 
 
