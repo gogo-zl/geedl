@@ -16,7 +16,7 @@ def log_execution_start(info=None):
     记录代码单元执行的开始时间。
     """
     start_time = datetime.now()
-    print(f"\n🔔 开始时间: {start_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+    print(f"\nStart Time: {start_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
 
 
 def register_jupyter_hook():
@@ -26,9 +26,9 @@ def register_jupyter_hook():
     ipython = get_ipython()
     if ipython:
         ipython.events.register('pre_run_cell', log_execution_start)
-        print("✅ 已注册 pre_run_cell 钩子！")
+        print("已注册 pre_run_cell 钩子！")
     else:
-        print("⚠️ 当前环境非 Jupyter Notebook，无法注册钩子！")
+        print("当前环境非 Jupyter Notebook，无法注册钩子！")
 
 
 
