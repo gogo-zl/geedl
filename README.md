@@ -23,7 +23,7 @@
 ```bash
 pip install git+https://gitclone.com/github.com/gogo-zl/GEE_py.git
 OR
-pip install git+https://gitee.com/gogo-zl/gee_py.git@v0.1.1
+pip install git+https://gitee.com/gogo-zl/gee_py.git@v0.1.2
 ```
 
 ---
@@ -35,7 +35,7 @@ pip install git+https://gitee.com/gogo-zl/gee_py.git@v0.1.1
 ```bash
 pip install --upgrade git+https://gitclone.com/github.com/gogo-zl/GEE_py.git
 OR
-pip install --upgrade git+https://gitee.com/gogo-zl/gee_py.git@v0.1.1
+pip install --upgrade git+https://gitee.com/gogo-zl/gee_py.git@v0.1.2
 ```
 
 ---
