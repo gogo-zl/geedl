@@ -25,3 +25,12 @@ setup(
     ],
     python_requires='>=3.7',
 )
+
+
+# cd geepy
+# change version in setup.py and readme.md
+# git add -A
+# git commit -m "Bump version to 0.1.2 and add new function xxx"
+# git push origin master
+# git tag v0.1.2
+# git push origin v0.1.2
