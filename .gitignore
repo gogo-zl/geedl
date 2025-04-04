@@ -1,0 +1,18 @@
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+
+# 安装/打包元数据
+*.egg-info/
+build/
+dist/
+
+# VSCode 配置（不需要同步）
+.vscode/
+
+# 日志/临时文件（可选）
+*.log
+*.tmp
+
+# Jupyter
+.ipynb_checkpoints/
