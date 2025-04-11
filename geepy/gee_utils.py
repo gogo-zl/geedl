@@ -26,7 +26,7 @@ def register_jupyter_hook():
     ipython = get_ipython()
     if ipython:
         ipython.events.register('pre_run_cell', log_execution_start)
-        print("已注册 pre_run_cell 钩子！")
+        # print("已注册 pre_run_cell 钩子！")
     else:
         print("当前环境非 Jupyter Notebook，无法注册钩子！")
 
@@ -208,6 +208,29 @@ def get_image_collection_dates(imgcol):
 
     return dates
 
+# 删除GEE的Folder 和 IMGCOL资产
+def delete_asset_folder(asset_path):
+    """
+    Recursively delete all child assets under a GEE folder or ImageCollection,
+    then delete the folder itself.
+
+    Args:
+        asset_path (str): Full asset path 
+    """
+    try:
+        children = ee.data.listAssets(asset_path).get('assets', [])
+        if not children:
+            print(f"No children found in: {asset_path}")
+        else:
+            for asset in children:
+                ee.data.deleteAsset(asset['name'])
+                print(f"Deleted: {asset['name']}")
+        ee.data.deleteAsset(asset_path)
+        print(f"Deleted folder: {asset_path}")
+    except Exception as e:
+        print(f"Error deleting assets under {asset_path}:\n{e}")
+
+
 
 # 明确需要导出的函数
 __all__ = [
@@ -216,5 +239,6 @@ __all__ = [
     "reload_package",
     "generate_rect_grid",
     "generate_hex_grid",
-    "fetch_json"
+    "fetch_json", 
+    "delete_asset_folder"
 ]
