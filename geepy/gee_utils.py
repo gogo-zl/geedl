@@ -231,6 +231,48 @@ def delete_asset_folder(asset_path):
         print(f"Error deleting assets under {asset_path}:\n{e}")
 
 
+def ensure_asset_exists(asset_path, asset_type='IMAGE_COLLECTION'):
+    """Check if an Earth Engine asset exists; create if not."""
+    parent = '/'.join(asset_path.split('/')[:-1])
+    assets = ee.data.listAssets(parent).get('assets', [])
+    existing_names = [a['name'] for a in assets]
+
+    if asset_path in existing_names:
+        print(f"Asset exists: {asset_path}")
+    else:
+        ee.data.createAsset({'type': asset_type}, asset_path)
+        print(f"Created asset: {asset_path}")
+
+
+def copy_imagecollection(src_ic_path, dst_ic_path):
+    """
+    Copy all images from one Earth Engine ImageCollection to another using ee.data.
+
+    Args:
+        src_ic_path (str): Source ImageCollection asset path.
+        dst_ic_path (str): Target ImageCollection asset path (must already exist).
+    """
+    # 创建目标目录（如果不存在）
+    ensure_asset_exists(dst_ic_path, asset_type='IMAGE_COLLECTION')
+
+    # 列出源目录下的所有图像
+    assets = ee.data.listAssets(src_ic_path).get('assets', [])
+    if not assets:
+        print(f"No assets found in source: {src_ic_path}")
+        return
+
+    for asset in assets:
+        if asset['type'] != 'IMAGE':
+            continue
+        img_name = asset['name'].split('/')[-1]
+        src_img_path = asset['name']
+        dst_img_path = f"{dst_ic_path}/{img_name}"
+
+        try:
+            ee.data.copyAsset(src_img_path, dst_img_path)
+            print(f"Copied: {img_name}")
+        except Exception as e:
+            print(f"Failed to copy {img_name}: {e}")
 
 # 明确需要导出的函数
 __all__ = [
@@ -240,5 +282,7 @@ __all__ = [
     "generate_rect_grid",
     "generate_hex_grid",
     "fetch_json", 
-    "delete_asset_folder"
+    "delete_asset_folder", 
+    "ensure_asset_exists", 
+    "copy_imagecollection"
 ]
