@@ -10,10 +10,10 @@ Submodules
 ----------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
-   geedl.gee.image_loader
-   geedl.gee.params
-   geedl.gee.processing
-   geedl.gee.utils
-   geedl.gee.visualization
+   Image_loader <geedl.gee.image_loader>
+   Params <geedl.gee.params>
+   Processing <geedl.gee.processing>
+   Utils <geedl.gee.utils>
+   Visualization <geedl.gee.visualization>

@@ -9,7 +9,7 @@
    - 支持 GEE 与本地环境的数据交互，集成并实现 ArcGIS 中的部分功能。
 
 2. **GEE + PyTorch 深度学习支持**  
-   - 集成深度学习功能，如CNN、DNN等。
+   - 集成深度学习功能，如 CNN、DNN 等。
 
 3. **文献代码复现**  
    - 提供部分经典文献的代码复现和示例。
@@ -18,42 +18,41 @@
 
 ## 安装方法
 
-使用以下命令从 GitHub 镜像安装：
+使用以下命令从 PyPI 安装 GEEdl：
 
 ```bash
-pip install git+https://gitclone.com/github.com/gogo-zl/geedl.git
-OR
-pip install git+https://gitee.com/gogo-zl/geedl.git@v0.1.3
+pip install geedl
+or
+pip install git+https://gitclone.com/github.com/gogo-zl/geedl.git@v0.1.5
 ```
-
----
-
-## 更新方法
-
-使用以下命令更新至最新版本：
-
-```bash
-pip install --upgrade git+https://gitclone.com/github.com/gogo-zl/geedl.git
-OR
-pip install --upgrade git+https://gitee.com/gogo-zl/geedl.git@v0.1.3
-```
-
----
 
 ## 当前状态
 
-- **开发中**：
-  - 当前版本仅实现部分基础功能，包括：
-    - 计算任意年份、区域的Landsat和MOD09A1
-    - 基础分块函数，如矩形、六边形
-    - 其他简单有趣的小功能.
-  - 更多高级功能（批量处理样本、高效大规模计算支持）将持续更新。
-  
-- **欢迎贡献**：
-  - 欢迎社区开发者提交建议、功能需求或贡献代码。
+### 开发中：
 
-**文档**：
-  - [现有功能文档（zh-CN）](https://gee-py.readthedocs.io/zh_CN/latest/)。
+当前版本已实现以下基础功能：
+
+- 计算任意年份、区域的 Landsat 和 MOD09A1 数据。
+- 提供基础的分块函数，如矩形、六边形等。
+- 实现其他一些简单的遥感数据处理功能。
+
+高级功能正在持续开发中，包括：
+
+- 高效的大规模数据计算支持。
+- 批量处理样本、深度学习相关支持等。
+
+---
+
+## 欢迎贡献
+
+欢迎社区开发者提交建议、功能需求或贡献代码。
+
+---
+
+## 文档
+
+[现有功能文档（zh-CN）](https://gee-py.readthedocs.io/zh_CN/latest/)
+
 ---
 
 ## 联系方式
@@ -64,3 +63,6 @@ pip install --upgrade git+https://gitee.com/gogo-zl/geedl.git@v0.1.3
 ---
 
 > 如有问题或建议，欢迎在 GitHub 仓库提交 Issue 反馈。
+
+
+

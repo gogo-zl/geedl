@@ -11,13 +11,14 @@ The project is under active development and continues to expand.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Geedl Documentation
 
-   modules
+   gee <geedl.gee>
 
-.. Indices and tables
-.. ==================
 
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
