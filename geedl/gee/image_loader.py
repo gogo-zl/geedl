@@ -36,7 +36,7 @@ def get_any_year_data(date_range, roi, dataset='Landsat', remove_cloud=True, nor
 
     def process_series(series):
         """
-        处理单个数据系列。
+        处理单个数据系列 。
         """
         collection = (ee.ImageCollection(DATASET_IDS[series])
                       .filterBounds(roi)
