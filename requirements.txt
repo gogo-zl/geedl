@@ -1,0 +1,6 @@
+IPython
+earthengine-api
+geemap
+matplotlib
+numpy
+pandas

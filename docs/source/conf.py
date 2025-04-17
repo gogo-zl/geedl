@@ -9,9 +9,11 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 project = 'GEEpy'
 author = 'Zhang Lei'
+
 version_path = Path(__file__).parents[2] / 'geepy' / '__version__.py'
-exec(version_path.read_text(), version := {})
-release = version['__version__']
+exec(version_path.read_text(), version_dict := {})
+version = release = version_dict['__version__']
+
 copyright = '2025, Zhang Lei'
 
 # -- General configuration ---------------------------------------------------
@@ -68,7 +70,7 @@ html_theme_options = {
     "source_directory": "docs/source/",
 }
 
-html_logo = "E:\Git_project\geepy_project\docs\_static\logo.png"
+html_logo = "_static/logo.png"
 html_static_path = ['_static']
 html_css_files = ['custom.css']  # 如果你有自定义 CSS，可启用
 
