@@ -3,13 +3,13 @@ from pathlib import Path
 
 
 def get_version():
-    version_path = Path(__file__).parent / "geepy" / "__version__.py"
+    version_path = Path(__file__).parent / "geedl" / "__version__.py"
     exec(version_path.read_text(), version := {})
     return version["__version__"]
 
 
 setup(
-    name='geepy',
+    name='geedl',
     version=get_version(),
     description='A Python package for Google Earth Engine tools',
     long_description=open('README.md', encoding='utf-8').read(),
@@ -34,7 +34,7 @@ setup(
 )
 
 
-# cd geepy
+# cd geedl
 # change version in setup.py and readme.md
 # git add -A
 # git commit -m "Bump version to 0.1.2 and add new function xxx"

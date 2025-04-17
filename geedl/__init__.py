@@ -1,4 +1,4 @@
-# geepy/__init__.py
+# geedl/__init__.py
 
 
 

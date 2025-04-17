@@ -1,7 +1,7 @@
-geepy.gee.visualization module
+geedl.gee.visualization module
 ==============================
 
-.. automodule:: geepy.gee.visualization
+.. automodule:: geedl.gee.visualization
    :members:
    :undoc-members:
    :show-inheritance:

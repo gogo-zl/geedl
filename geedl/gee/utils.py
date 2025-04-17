@@ -1,6 +1,6 @@
 import ee
 import importlib
-import geepy
+import geedl
 from datetime import datetime
 from IPython import get_ipython
 import urllib.request
@@ -49,12 +49,12 @@ def register_jupyter_hook():
 #######################################################################
 def reload_package():
     """
-    强制重新加载 geepy 包及其所有子模块，适用于开发者模式安装时更新后的动态加载。
+    强制重新加载 geedl 包及其所有子模块，适用于开发者模式安装时更新后的动态加载。
     """
-    for submodule in list(geepy.__dict__.values()):
-        if hasattr(submodule, "__name__") and submodule.__name__.startswith("geepy."):
+    for submodule in list(geedl.__dict__.values()):
+        if hasattr(submodule, "__name__") and submodule.__name__.startswith("geedl."):
             importlib.reload(submodule)
-    importlib.reload(geepy)
+    importlib.reload(geedl)
 
 
 

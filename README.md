@@ -1,6 +1,6 @@
-# GEEpy
+# GEEdl
 
-**GEEpy** 是一个基于 Google Earth Engine (GEE) 的工具包，目前处于开发阶段。以下是工具包的主要功能规划：
+**GEEdl** 是一个基于 Google Earth Engine (GEE) 的工具包，目前处于开发阶段。以下是工具包的主要功能规划：
 
 ## 功能规划
 

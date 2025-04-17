@@ -7,12 +7,14 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'GEEpy'
+project = 'GEEdl'
 author = 'Zhang Lei'
 
-version_path = Path(__file__).parents[2] / 'geepy' / '__version__.py'
+version_path = Path(__file__).parents[2] / 'geedl' / '__version__.py'
 exec(version_path.read_text(), version_dict := {})
 version = release = version_dict['__version__']
+
+html_title = f"{project} v{release}"
 
 copyright = '2025, Zhang Lei'
 
@@ -39,7 +41,7 @@ autosummary_generate = True
 templates_path = ['_templates']
 exclude_patterns = []
 
-language = 'zh_CN'
+language = 'en'
 
 # -- HTML output -------------------------------------------------------------
 
@@ -65,7 +67,7 @@ html_theme_options = {
     # 🔗 GitHub 链接信息（可选）
     "navigation_with_keys": True,
     "sidebar_hide_name": False,
-    "source_repository": "https://github.com/gg-zl/GEE_py/",
+    "source_repository": "https://github.com/gg-zl/geedl/",
     "source_branch": "main",
     "source_directory": "docs/source/",
 }

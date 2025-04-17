@@ -1,7 +1,7 @@
-geepy.gee.params module
+geedl.gee.params module
 =======================
 
-.. automodule:: geepy.gee.params
+.. automodule:: geedl.gee.params
    :members:
    :undoc-members:
    :show-inheritance:

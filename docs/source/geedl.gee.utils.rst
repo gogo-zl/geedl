@@ -1,7 +1,7 @@
-geepy.gee.utils module
+geedl.gee.utils module
 ======================
 
-.. automodule:: geepy.gee.utils
+.. automodule:: geedl.gee.utils
    :members:
    :undoc-members:
    :show-inheritance:
