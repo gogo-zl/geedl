@@ -16,15 +16,6 @@
 
 ---
 
-## 安装方法
-
-使用以下命令从 PyPI 安装 GEEdl：
-
-```bash
-pip install geedl
-or
-pip install git+https://gitclone.com/github.com/gogo-zl/geedl.git@v0.1.5
-```
 
 ## 当前状态
 
@@ -55,6 +46,31 @@ pip install git+https://gitclone.com/github.com/gogo-zl/geedl.git@v0.1.5
 
 ---
 
+## 安装方法
+
+使用以下命令从 PyPI 安装 GEEdl：
+
+```bash
+pip install geedl
+```
+
+或者从 GitHub 安装最新版本：
+
+```bash
+pip install git+https://gitclone.com/github.com/gogo-zl/geedl.git
+```
+
+[PyPI 上的 GEEdl 项目页面](https://pypi.org/project/geedl/)
+
+---
+
+## 注意
+
+- **版本不一致**：由于 GitHub 和 PyPI 上的版本可能不同步，建议在 GitHub 上获取最新的开发版本。如果你需要稳定版本，请从 PyPI 安装。
+- **GitHub 版本**：可以通过 `pip install git+https://github.com/gogo-zl/geedl.git` 获取 GitHub 上的最新代码。
+
+---
+
 ## 联系方式
 
 - **作者**：gogo-zl  
@@ -63,6 +79,4 @@ pip install git+https://gitclone.com/github.com/gogo-zl/geedl.git@v0.1.5
 ---
 
 > 如有问题或建议，欢迎在 GitHub 仓库提交 Issue 反馈。
-
-
 
