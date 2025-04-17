@@ -16,3 +16,6 @@ dist/
 
 # Jupyter
 .ipynb_checkpoints/
+
+
+release.py

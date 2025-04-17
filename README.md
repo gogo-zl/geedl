@@ -21,9 +21,9 @@
 使用以下命令从 GitHub 镜像安装：
 
 ```bash
-pip install git+https://gitclone.com/github.com/gogo-zl/GEE_py.git
+pip install git+https://gitclone.com/github.com/gogo-zl/geedl.git
 OR
-pip install git+https://gitee.com/gogo-zl/gee_py.git@v0.1.2
+pip install git+https://gitee.com/gogo-zl/geedl.git@v0.1.3
 ```
 
 ---
@@ -33,9 +33,9 @@ pip install git+https://gitee.com/gogo-zl/gee_py.git@v0.1.2
 使用以下命令更新至最新版本：
 
 ```bash
-pip install --upgrade git+https://gitclone.com/github.com/gogo-zl/GEE_py.git
+pip install --upgrade git+https://gitclone.com/github.com/gogo-zl/geedl.git
 OR
-pip install --upgrade git+https://gitee.com/gogo-zl/gee_py.git@v0.1.2
+pip install --upgrade git+https://gitee.com/gogo-zl/geedl.git@v0.1.3
 ```
 
 ---
@@ -59,7 +59,7 @@ pip install --upgrade git+https://gitee.com/gogo-zl/gee_py.git@v0.1.2
 ## 联系方式
 
 - **作者**：gogo-zl  
-- **GitHub 仓库**：[GEE_py](https://github.com/gogo-zl/GEE_py.git)
+- **GitHub 仓库**：[geedl](https://github.com/gogo-zl/geedl.git)
 
 ---
 
