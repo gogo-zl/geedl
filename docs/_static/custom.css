@@ -1,0 +1,35 @@
+/* 增加函数之间的间距 */
+dl.function {
+  margin-bottom: 2em;
+}
+
+/* 函数签名的样式（蓝色边框 + 背景） */
+dt.sig {
+  background-color: #f0f4ff;
+  border-left: 3px solid #2a6ee8;
+  padding: 0.4em;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* 参数说明区域：原来用于 field-list（现在兼容 simple） */
+dl.field-list.simple {
+  background: #f8faff;
+  border: 1px solid #dde4ee;
+  padding: 1em;
+  border-radius: 6px;
+  margin: 1em 0;
+}
+dl.field-list.simple > dt {
+  font-weight: bold;
+  color: #2a6ee8;
+  margin-bottom: 0.5em;
+}
+
+/* 可选：设置代码块更柔和 */
+div.highlight pre {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  padding: 0.8em;
+  border-radius: 4px;
+}

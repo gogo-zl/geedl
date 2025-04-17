@@ -1,9 +1,16 @@
 from setuptools import setup, find_packages
+from pathlib import Path
+
+
+def get_version():
+    version_path = Path(__file__).parent / "geepy" / "__version__.py"
+    exec(version_path.read_text(), version := {})
+    return version["__version__"]
 
 
 setup(
     name='geepy',
-    version='0.1.2',
+    version=get_version(),
     description='A Python package for Google Earth Engine tools',
     long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',

@@ -1,17 +1,18 @@
-import importlib
-import pkgutil
+# geepy/__init__.py
 
 
-__version__ = "0.1.1"
 
-__all__ = [] 
+from .gee import (
+    image_loader,
+    params,
+    processing,
+    utils,
+    visualization
+)
 
-# 遍历当前包下的所有模块
-for _, module_name, _ in pkgutil.iter_modules(__path__):
-    # 动态导入模块
-    module = importlib.import_module(f".{module_name}", package=__name__)
-    if hasattr(module, "__all__"):  # 检查模块是否定义了 __all__
-        # 将模块中定义的 __all__ 导出的对象添加到当前命名空间
-        for attr_name in module.__all__:
-            globals()[attr_name] = getattr(module, attr_name)
-        __all__.extend(module.__all__)  # 添加到包的 __all__
+# 可选向后兼容：
+from .gee.utils import *
+from .gee.processing import *
+from .gee.image_loader import *
+from .gee.params import *
+from .gee.visualization import *

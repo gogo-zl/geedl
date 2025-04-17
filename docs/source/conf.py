@@ -1,57 +1,78 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../'))  # 项目根目录
-# print(f"Current sys.path: {sys.path}")
+from pathlib import Path
+sys.path.insert(0, os.path.abspath('../../'))
 
-project = 'geepy'
-copyright = '2025, Zhang Lei'
+# -- Project information -----------------------------------------------------
+
+project = 'GEEpy'
 author = 'Zhang Lei'
-release = '0.1.0'
+version_path = Path(__file__).parents[2] / 'geepy' / '__version__.py'
+exec(version_path.read_text(), version := {})
+release = version['__version__']
+copyright = '2025, Zhang Lei'
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',      # 自动生成 API 文档
-    'sphinx.ext.napoleon',     # 支持 Google 和 NumPy 风格的 docstring
-    'sphinx.ext.viewcode',     # 提供源码链接
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'sphinx_copybutton',
 ]
 
 autodoc_default_options = {
     'members': True,
     'undoc-members': True,
-    'show-inheritance': True,
     'private-members': True,
     'special-members': '__init__',
     'inherited-members': True,
+    'show-inheritance': True,
 }
-
-html_theme_options = {
-    'collapse_navigation': False,  # 禁止菜单折叠，默认展开
-    'navigation_depth': 4,         # 设置导航的深度，4 表示最多显示 4 层
-}
-
-html_context = {
-    'current_version': release,
-}
-
-autodoc_mock_imports = ['geemap', 'earthengine-api', 'numpy', 'pandas']
+autosummary_generate = True
 
 templates_path = ['_templates']
 exclude_patterns = []
 
 language = 'zh_CN'
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+# -- HTML output -------------------------------------------------------------
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
+
+html_theme_options = {
+    # 🌞 亮色主题下的配色
+    "light_css_variables": {
+        "color-brand-primary": "#2a6ee8",
+        "color-brand-content": "#2a6ee8",
+        "color-background-primary": "#ffffff",
+        "color-background-secondary": "#f6f8fa",
+        "color-foreground-primary": "#0a2540",
+    },
+    # 🌚 暗色主题下的配色
+    "dark_css_variables": {
+        "color-brand-primary": "#4ea1ff",
+        "color-brand-content": "#4ea1ff",
+        "color-background-primary": "#0f172a",
+        "color-background-secondary": "#1e293b",
+        "color-foreground-primary": "#cbd5e1",
+    },
+    # 🔗 GitHub 链接信息（可选）
+    "navigation_with_keys": True,
+    "sidebar_hide_name": False,
+    "source_repository": "https://github.com/gg-zl/GEE_py/",
+    "source_branch": "main",
+    "source_directory": "docs/source/",
+}
+
+html_logo = "E:\Git_project\geepy_project\docs\_static\logo.png"
 html_static_path = ['_static']
+html_css_files = ['custom.css']  # 如果你有自定义 CSS，可启用
+
+# -- Copy button configuration -----------------------------------------------
+
+copybutton_prompt_text = r">>> |\.\.\. "
+copybutton_prompt_is_regexp = True

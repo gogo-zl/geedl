@@ -6,9 +6,8 @@
 Welcome to geepy’s documentation!
 =================================
 
-GEEpy 是一个基于 Google Earth Engine (GEE) 的工具包，目前处于开发阶段。
-
-=================================
+**GEEpy** is a Python toolkit built on top of Google Earth Engine (GEE), designed to streamline remote sensing workflows.  
+The project is under active development and continues to expand.
 
 .. toctree::
    :maxdepth: 2
@@ -16,9 +15,9 @@ GEEpy 是一个基于 Google Earth Engine (GEE) 的工具包，目前处于开�
 
    modules
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
