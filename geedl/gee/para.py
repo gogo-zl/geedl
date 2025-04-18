@@ -1,5 +1,4 @@
-import ee
-
+# para.py
 
 SPECTRAL_INDICES_URL = "https://raw.githubusercontent.com/awesome-spectral-indices/awesome-spectral-indices/main/output/spectral-indices-dict.json"
 CONSTANTS_URL = "https://raw.githubusercontent.com/awesome-spectral-indices/awesome-spectral-indices/main/output/constants.json"
@@ -31,7 +30,6 @@ RENAMED_BANDS = {
     'MCD43A4': ['red', 'nir', 'blue', 'green', 'mir', 'swir1', 'swir2']
 }
 
-
 BAND_MAPPING = {
     'B': 'blue',
     'G': 'green',
@@ -44,25 +42,11 @@ BAND_MAPPING = {
 }
 
 
-
-# 新增的输入验证函数
-def validate_inputs(date_range, roi):
-    """
-    验证用户输入的参数是否合法。
-    """
-    if not isinstance(date_range, list) or len(date_range) != 2:
-        raise ValueError("date_range must be a list with two elements: [start_date, end_date].")
-    if not isinstance(roi, ee.Geometry):
-        raise ValueError("roi must be an ee.Geometry object.")
-
-
-
 __all__ = [
-    "DATASET_IDS", 
-    "ORIGINAL_BANDS", 
-    "RENAMED_BANDS", 
-    "BAND_MAPPING", 
-    "SPECTRAL_INDICES_URL", 
-    "CONSTANTS_URL",
-    "validate_inputs"
+    "SPECTRAL_INDICES_URL",  # The URL to fetch spectral indices data (e.g., NDVI, EVI)
+    "CONSTANTS_URL",         # The URL to fetch constants related to spectral indices
+    "DATASET_IDS",           # A dictionary of dataset IDs for different satellite data (Landsat, MODIS)
+    "ORIGINAL_BANDS",        # A dictionary mapping datasets to their original band names (before renaming)
+    "RENAMED_BANDS",         # A dictionary mapping datasets to their renamed band names (after renaming)
+    "BAND_MAPPING"           # A mapping of band abbreviations to full names (e.g., 'B' -> 'blue', 'G' -> 'green')
 ]
