@@ -13,7 +13,7 @@ The project is under active development and continues to expand.
    :maxdepth: 2
    :caption: Geedl Documentation
 
-   gee <geedl.gee>
+   GEE <geedl.gee>
 
 
 Indices and tables

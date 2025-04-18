@@ -1,19 +1,22 @@
 geedl.gee package
 =================
 
-.. automodule:: geedl.gee
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Submodules
 ----------
 
 .. toctree::
    :maxdepth: 2
 
-   Image_loader <geedl.gee.image_loader>
-   Params <geedl.gee.params>
-   Processing <geedl.gee.processing>
-   Utils <geedl.gee.utils>
-   Visualization <geedl.gee.visualization>
+   DataLoader <geedl.gee.data_loader>
+   DataProcess <geedl.gee.data_processing>
+   GeeUtils <geedl.gee.gee_utils>
+   JupUtils <geedl.gee.notebook_utils>
+   Plot <geedl.gee.plotter>
+
+
+---------------
+
+.. automodule:: geedl.gee
+   :members:
+   :undoc-members:
+   :show-inheritance:

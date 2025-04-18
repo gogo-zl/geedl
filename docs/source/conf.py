@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'GEEdl'
+project = 'GeeDL'
 author = 'Zhang Lei'
 
 version_path = Path(__file__).parents[2] / 'geedl' / '__version__.py'
@@ -31,8 +31,7 @@ extensions = [
 autodoc_default_options = {
     'members': True,
     'undoc-members': True,
-    'private-members': True,
-    'special-members': '__init__',
+    'private-members': False,
     'inherited-members': True,
     'show-inheritance': True,
 }
