@@ -16,7 +16,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Zhang Lei',
     author_email='zhanglei1136@163.com',
-    url='https://github.com/gg-zl/GEE_py',
+    url='https://github.com/gogo-zl/geedl',
     packages=find_packages(), 
     install_requires=[
         'numpy',              
