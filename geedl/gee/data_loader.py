@@ -28,7 +28,11 @@ class DataLoader:
         """
         Process an image by selecting bands and applying normalization.
         """
-        img = img.select(ORIGINAL_BANDS[series], RENAMED_BANDS[series]).select(self.bands)
+        img = img.select(ORIGINAL_BANDS[series], RENAMED_BANDS[series])
+
+        # If user specifies bands, select them; otherwise keep all renamed bands
+        if self.bands:
+            img = img.select(self.bands)
         
         # Apply normalization
         if self.normalize:
