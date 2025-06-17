@@ -107,8 +107,11 @@ def get_any_year_data(date_range, roi, dataset='Landsat', remove_cloud=True, nor
         return processor.process_series()
     
     collections = [processor.process_series(series) for series in processor.landsat_series]
-    merged_collection = ee.ImageCollection(collections).flatten().sort('system:time_start')
-    return merged_collection
+    # merged_collection = ee.ImageCollection(collections).flatten().sort('system:time_start')
+    merged_collection = collections[0]
+    for col in collections[1:]:
+        merged_collection = merged_collection.merge(col)
+    return merged_collection.sort('system:time_start')
 
 
 __all__ = [
