@@ -4,3 +4,4 @@ geemap
 matplotlib
 numpy
 pandas
+whitebox

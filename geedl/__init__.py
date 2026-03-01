@@ -2,7 +2,7 @@
 
 
 
-from .gee import (
+from .cloud import (
     data_loader,
     data_processing,
     gee_utils,
@@ -11,7 +11,7 @@ from .gee import (
     para
 )
 
-from .gee import (
+from .cloud import (
     data_loader,
     data_processing,
     gee_utils,
@@ -21,9 +21,9 @@ from .gee import (
 )
 
 # 可选向后兼容：
-from .gee.data_loader import *
-from .gee.data_processing import *
-from .gee.gee_utils import *
-from .gee.notebook_utils import *
-from .gee.plotter import *
-from .gee.para import *
+from .cloud.data_loader import *
+from .cloud.data_processing import *
+from .cloud.gee_utils import *
+from .cloud.notebook_utils import *
+from .cloud.plotter import *
+from .cloud.para import *
