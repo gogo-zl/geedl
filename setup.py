@@ -23,7 +23,8 @@ setup(
         'earthengine-api',     
         'geemap',             
         'pandas',              
-        'matplotlib',           
+        'matplotlib',   
+        'whitebox',         
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
